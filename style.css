@@ -1,18 +1,33 @@
+/* Ustawienia dla całego ekranu */
 body {
-  background-color: #008080; /* kolor tła jak na obrazku */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url('monitor.jpg') no-repeat center center;
+  background-size: cover;
   font-family: 'MS Sans Serif', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
 }
 
+/* Overlay, żeby wszystko było na środku */
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Okno dialogowe w stylu retro */
 .window {
   width: 320px;
   border: 2px solid #000;
   background-color: #C0C0C0;
   box-shadow: 2px 2px #808080;
+  z-index: 10;
 }
 
 .title-bar {
