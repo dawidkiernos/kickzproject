@@ -26,9 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Opcjonalnie: zapisanie do localStorage
         localStorage.setItem('kickzz_waitlist_email', savedEmail);
         
-        // Potwierdzenie dla użytkownika
-        alert('Dziękujemy! Twój e-mail został zapisany na liście oczekujących.');
-        
+        // Pokazanie ekranu starego Windowsa
+	document.getElementById('retro-shutdown-screen').classList.add('show');
+
+	// Opcjonalnie: automatyczne ukrycie po 4 sekundach
+	setTimeout(() => {
+    	document.getElementById('retro-shutdown-screen').classList.remove('show');
+	}, 4000);
         // Wyczyszczenie pola
         emailInput.value = '';
     }
