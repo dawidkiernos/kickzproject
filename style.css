@@ -205,8 +205,8 @@ input[type="email"]:focus {
 }
 
 .retro-gif {
-    width: 60px; /* mniejszy GIF */
-    margin-bottom: 15px;
+    width: 600px; /* mniejszy GIF */
+    margin-bottom: 400px;
 }
 
 .retro-text {

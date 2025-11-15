@@ -29,6 +29,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // Pokazanie ekranu starego Windowsa
 	document.getElementById('retro-shutdown-screen').classList.add('show');
 
+	// Dynamiczne wypełnianie paska ładowania
+	const fill = document.querySelector('.retro-loader-fill'); // upewnij się, że masz w HTML element z klasą .retro-loader-fill
+	let width = 0;
+
+	const interval = setInterval(() => {
+    width += Math.random() * 5; // losowy przyrost 0-5%
+    if(width >= 100) {
+        width = 100;
+        clearInterval(interval);
+        // Opcjonalnie: automatyczne ukrycie ekranu po zakończeniu ładowania
+        setTimeout(() => {
+            document.getElementById('retro-shutdown-screen').classList.remove('show');
+        }, 500);
+    }
+    fill.style.width = width + '%';
+}, 100);
+
+
 	// Opcjonalnie: automatyczne ukrycie po 4 sekundach
 	//setTimeout(() => {
     	//document.getElementById('retro-shutdown-screen').classList.remove('show');
