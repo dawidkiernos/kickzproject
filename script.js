@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('retro-shutdown-screen').classList.add('show');
 
 	// Opcjonalnie: automatyczne ukrycie po 4 sekundach
-	setTimeout(() => {
-    	document.getElementById('retro-shutdown-screen').classList.remove('show');
-	}, 4000);
+	//setTimeout(() => {
+    	//document.getElementById('retro-shutdown-screen').classList.remove('show');
+	//}, 4000);
         // Wyczyszczenie pola
         emailInput.value = '';
     }
