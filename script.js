@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const emailInput = document.getElementById('email');
     const yesButton = document.getElementById('yes-button');
     const closeButton = document.querySelector('.close-button');
-    
+    const overlay = document.getElementById('overlay');
     // Funkcja zapisywania e-maila
     function saveEmail() {
         const email = emailInput.value.trim();
@@ -63,7 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Enter') {
             saveEmail();
         }
-    });
+    }
+  	overlay.classList.toggle('active'); // włącza/wyłącza czarny ekran
+    );
     
     // Obsługa przycisku zamykania (opcjonalna)
     closeButton.addEventListener('click', function() {
@@ -79,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     yesButton.addEventListener('mouseleave', function() {
         this.style.backgroundColor = '#c0c0c0';
+
     });
     
     closeButton.addEventListener('mouseenter', function() {
