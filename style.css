@@ -173,24 +173,20 @@ input[type="email"]:focus {
         width: 200px;
     }
 }
+
 #retro-shutdown-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    
-    background-color: #000080; /* klasyczny niebieski Windows 95/98 */
+    background-color: #000080;
     color: #FFFFFF;
     font-family: "MS Sans Serif", "Tahoma", sans-serif;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 28px;
-
     z-index: 999999;
-
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease;
@@ -201,10 +197,41 @@ input[type="email"]:focus {
     visibility: visible;
 }
 
+.retro-box {
+    text-align: center;
+}
+
+.retro-gif {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
 .retro-text {
-    background-color: #000080;
-    padding: 20px 40px;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+/* Pasek ładowania – Windows 95 style */
+.retro-loader {
+    width: 300px;
+    height: 20px;
     border: 2px solid #FFFFFF;
+    background-color: #000040;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.retro-loader-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #FFFFFF;
+    animation: retroLoad 4s linear forwards;
+}
+
+@keyframes retroLoad {
+    from { width: 0%; }
+    to { width: 100%; }
 }
 ~
 ~
