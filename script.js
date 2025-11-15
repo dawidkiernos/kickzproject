@@ -64,9 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
             saveEmail();
         }
     }
-  	overlay.classList.toggle('active'); // włącza/wyłącza czarny ekran
     );
-    
+     //czarny ekran 
+button.addEventListener('click', () => {
+    overlay.classList.toggle('active');
+  });
     // Obsługa przycisku zamykania (opcjonalna)
     closeButton.addEventListener('click', function() {
         // Można dodać logikę zamykania okna lub ukrycia
