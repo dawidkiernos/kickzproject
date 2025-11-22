@@ -178,7 +178,7 @@ input[type="email"]:focus {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* wyśrodkowanie */
-    width: 350px; /* zmniejszona szerokość */
+    width: 450px; /* zmniejszona szerokość */
     height: auto; /* automatyczna wysokość dopasowana do zawartości */
     background-color: #000080;
     color: #FFFFFF;
