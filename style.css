@@ -83,7 +83,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: grey;
     font-family: 'MS Sans Serif', sans-serif;
 }
 
@@ -179,7 +179,7 @@ input[type="email"]:focus {
     left: 0;
     width: 100vw;        /* pełna szerokość okna */
     height: 100vh;  
-    background-color: #000080;
+    background-color: #000000;
     color: #FFFFFF;
     font-family: "MS Sans Serif", "Tahoma", sans-serif;
     display: flex;
@@ -204,7 +204,7 @@ input[type="email"]:focus {
 }
 
 .retro-gif {
-    width: 600px; /* mniejszy GIF */
+    width: 500px; /* mniejszy GIF */
     margin-bottom: 15px;
 }
 
