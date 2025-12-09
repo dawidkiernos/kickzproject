@@ -175,11 +175,10 @@ input[type="email"]:focus {
 }
 #retro-shutdown-screen {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* wyśrodkowanie */
-    width: 650px; /* zmniejszona szerokość */
-    height: auto; /* automatyczna wysokość dopasowana do zawartości */
+    top: 0;
+    left: 0;
+    width: 100vw;        /* pełna szerokość okna */
+    height: 100vh;  
     background-color: #000080;
     color: #FFFFFF;
     font-family: "MS Sans Serif", "Tahoma", sans-serif;
