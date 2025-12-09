@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
         width = 100;
         clearInterval(interval);
         // Opcjonalnie: automatyczne ukrycie ekranu po zakończeniu ładowania
-        setTimeout(() => {
-            document.getElementById('retro-shutdown-screen').classList.remove('show');
-        }, 500);
+       // setTimeout(() => {
+   //         document.getElementById('retro-shutdown-screen').classList.remove('show');
+ //       }, 500);
     }
     fill.style.width = width + '%';
 }, 100);
