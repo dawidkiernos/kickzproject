@@ -35,7 +35,7 @@ if (line === "Loading operating system") {
         // -------------------------------------
         setTimeout(() => {
             const boot = document.getElementById("boot-screen");
-            boot.style.opacity = 0;
+            boot.style.display = None;
 
             setTimeout(() => {
                 boot.style.display = "none";
