@@ -18,21 +18,36 @@ let screen = document.getElementById("screen");
 
 function typeLine(line, callback) {
 
-    // --- Specjalna animacja kropek ---
-    if (line === "Loading operating system") {
+ // --- Specjalna animacja kropek ---
+if (line === "Loading operating system") {
 
-        screen.innerHTML += "Loading operating system"; // bez kropek
+    screen.innerHTML += "Loading operating system"; // bez kropek
 
-        setTimeout(() => { screen.innerHTML += "."; }, 300);  // 1 kropka
-        setTimeout(() => { screen.innerHTML += "."; }, 700);  // 2 kropka
+    setTimeout(() => { screen.innerHTML += "."; }, 300);  // 1 kropka
+    setTimeout(() => { screen.innerHTML += "."; }, 700);  // 2 kropka
+
+    setTimeout(() => {
+        screen.innerHTML += "."; // 3 kropka
+        screen.innerHTML += "\n";
+
+        // -------------------------------------
+        //   1 SEKUNDA PO 3 KROPCE → ZNIKNIĘCIE
+        // -------------------------------------
         setTimeout(() => {
-            screen.innerHTML += "."; // 3 kropka
-            screen.innerHTML += "\n";
-            callback();
-        }, 1100);
+            const boot = document.getElementById("boot-screen");
+            boot.style.opacity = 0;
 
-        return;
-    }
+            setTimeout(() => {
+                boot.style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+            }, 600); // musi odpowiadać CSS transition
+        }, 1000); // << tu ustawiasz 1 sekundę (1000ms)
+
+        callback();
+    }, 1100);
+
+    return;
+}
 
     // --- Normalne szybkie pisanie reszty linii ---
     let i = 0;
