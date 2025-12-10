@@ -35,10 +35,10 @@ if (line === "Loading operating system") {
         // -------------------------------------
         setTimeout(() => {
             const boot = document.getElementById("boot-screen");
-            boot.style.display = None;
+            boot.style.display = 0;
 
             setTimeout(() => {
-                boot.style.display = None;
+                boot.style.display = "none";
                 document.getElementById("main-content").style.display = "block";
             }, 600); // musi odpowiadać CSS transition
         }, 1000); // << tu ustawiasz 1 sekundę (1000ms)
