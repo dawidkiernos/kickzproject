@@ -1,3 +1,77 @@
+const lines = [
+    "Phoenix BIOS 4.0 Release 6.0",
+    "Copyright © 1985-1999 Phoenix Technologies Ltd.",
+    "",
+    "CPU: Intel 80486DX4 @ 100MHz",
+    "Memory Test: 65536K OK",
+    "",
+    "Detecting IDE Devices...",
+    "Primary Master: ST3144A",
+    "Primary Slave: None",
+    "",
+    "Loading operating system", // kropki dodajemy ręcznie
+    ""
+];
+
+let index = 0;
+let screen = document.getElementById("screen");
+
+function typeLine(line, callback) {
+
+    // --- Specjalna animacja kropek ---
+    if (line === "Loading operating system") {
+
+        screen.innerHTML += "Loading operating system"; // bez kropek
+
+        setTimeout(() => { screen.innerHTML += "."; }, 300);  // 1 kropka
+        setTimeout(() => { screen.innerHTML += "."; }, 700);  // 2 kropka
+        setTimeout(() => {
+            screen.innerHTML += "."; // 3 kropka
+            screen.innerHTML += "\n";
+            callback();
+        }, 1100);
+
+        return;
+    }
+
+    // --- Normalne szybkie pisanie reszty linii ---
+    let i = 0;
+    function typeChar() {
+        if (i < line.length) {
+            screen.innerHTML += line[i];
+            i++;
+            setTimeout(typeChar, 1 + Math.random() * 5);
+        } else {
+            screen.innerHTML += "\n";
+            callback();
+        }
+    }
+    typeChar();
+}
+
+function nextLine() {
+    if (index < lines.length) {
+        let delay = 30 + Math.random() * 80;
+        setTimeout(() => {
+            typeLine(lines[index], nextLine);
+            index++;
+        }, delay);
+    } else {
+        // Kiedy BOOT jest gotowy → znikanie + pokazanie treści strony
+        setTimeout(() => {
+            const boot = document.getElementById("boot-screen");
+            boot.style.opacity = 0;
+
+            setTimeout(() => {
+                boot.style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+            }, 600);
+        }, 300);
+    }
+}
+
+setTimeout(nextLine, 100);
+
 document.addEventListener('DOMContentLoaded', function() {
     const emailInput = document.getElementById('email');
     const yesButton = document.getElementById('yes-button');
