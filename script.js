@@ -38,7 +38,7 @@ if (line === "Loading operating system") {
             boot.style.display = None;
 
             setTimeout(() => {
-                boot.style.display = "none";
+                boot.style.display = None;
                 document.getElementById("main-content").style.display = "block";
             }, 600); // musi odpowiadać CSS transition
         }, 1000); // << tu ustawiasz 1 sekundę (1000ms)
