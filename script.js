@@ -184,4 +184,17 @@ button.addEventListener('click', () => {
     closeButton.addEventListener('mouseleave', function() {
         this.style.backgroundColor = '#c0c0c0';
     });
+
+    document.querySelectorAll('.desktop-icon').forEach(icon => {
+        icon.addEventListener('click', e => {
+            e.stopPropagation();
+            document.querySelectorAll('.desktop-icon').forEach(i => i.classList.remove('selected'));
+            icon.classList.add('selected');
+        });
+    });
+
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.desktop-icon').forEach(i => i.classList.remove('selected'));
+    });
+
 });

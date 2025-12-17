@@ -270,15 +270,15 @@ input[type="email"]:focus {
     background: rgba(0, 20, 40, 0.8);
 }
 
-/* Progress bar  */
+/* Progress bar  
 .progress {
     width: 100%;
     height: 20px;
     border: 2px solid #33ff44;
     margin: 20px 0;
     overflow: hidden;
-}
-
+}*/
+/*8
 .fill {
     height: 100%;
     width: 0;
@@ -289,7 +289,7 @@ input[type="email"]:focus {
     );
     transition: width 0.1s;
 }
-
+    
 /* Retro flickering text  */
 .loading-text {
     animation: blink 0.8s infinite steps(1);
@@ -309,22 +309,69 @@ input[type="email"]:focus {
     box-shadow: 0 0 8px #33ff44;
 }
 
+
 .icons-box {
-  position: fixed;      /* zawsze w tym samym miejscu ekranu */
+  position: fixed;
   top: 0;
   left: 0;
-
-  width: 50px;         /* ustaw szerokość */
-  height: 50px;         /* zachowuje proporcje */
-
-  margin: 10px;         /* odstęp od krawędzi (opcjonalnie) */
-background-color: #008080;
+  margin: 10px;
+  width: auto;   /* pozwala zawartości rozciągać się */
+  height: auto;  /* dopasowuje się do ikon */
+  display: flex; /* pozwala układać ikony w kolumnie */
+  flex-direction: column;
+  gap: 10px;     /* odstęp między ikonami */
+  background-color: transparent;
 }
 
-.icons-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* NIE rozciąga PNG */
-  display: block;      /* usuwa dziwne odstępy */  
-  background-color: #008080;
+.moj-komputer {
+    margin-top: 0;
+    color: #FFFFFF;                 /* biały tekst */
+    font-size: 15px;
+    font-family: "MS Sans Serif", Tahoma, sans-serif;
+    text-shadow: 1px 1px 0 #000000; /* czarny cień */
+    margin-top: 2px;
+    user-select: none;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;           /* szerokość kontenera */
+    cursor: default;
+    padding: 4px 2px;
+}
+
+.desktop-icon .icon-img-wrapper {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;        /* nie zmienia rozmiaru */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop-icon img {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.desktop-icon .moj-komputer {
+    font-size: 20px;       /* rozmiar tekstu */
+    line-height: 1;
+    text-align: center;
+    width: 100%;           /* dopasowanie do szerokości kontenera */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+.desktop-icon.selected {
+    background: #000080;   /* klasyczny Windows blue */
+    color: #FFFFFF;
+    text-shadow: none;
+    padding: 1px 3px;
+    border: 1px dotted #FFFFFF;
 }
