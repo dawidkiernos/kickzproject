@@ -204,7 +204,7 @@ input[type="email"]:focus {
 }
 
 .retro-gif {
-    width: 500px; /* mniejszy GIF */
+    width: 500px; /* mniejszy GIF */    
     margin-bottom: 15px;
 }
 
@@ -307,4 +307,24 @@ input[type="email"]:focus {
     background: black;
     border: 1px solid #33ff44;
     box-shadow: 0 0 8px #33ff44;
+}
+
+.icons-box {
+  position: fixed;      /* zawsze w tym samym miejscu ekranu */
+  top: 0;
+  left: 0;
+
+  width: 50px;         /* ustaw szerokość */
+  height: 50px;         /* zachowuje proporcje */
+
+  margin: 10px;         /* odstęp od krawędzi (opcjonalnie) */
+background-color: #008080;
+}
+
+.icons-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* NIE rozciąga PNG */
+  display: block;      /* usuwa dziwne odstępy */  
+  background-color: #008080;
 }
