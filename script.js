@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Dynamiczne wypełnianie paska ładowania
 	const fill = document.querySelector('.retro-loader-fill'); // upewnij się, że masz w HTML element z klasą .retro-loader-fill
-	let width = 0;
+  
+    let width = 0;
 
 	const interval = setInterval(() => {
     width += Math.random() * 5; // losowy przyrost 0-5%
