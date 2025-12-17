@@ -326,7 +326,7 @@ input[type="email"]:focus {
 .moj-komputer {
     margin-top: 0;
     color: #FFFFFF;                 /* biały tekst */
-    font-size: 15px;
+    font-size: 11px;
     font-family: "MS Sans Serif", Tahoma, sans-serif;
     text-shadow: 1px 1px 0 #000000; /* czarny cień */
     margin-top: 2px;
