@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
        // setTimeout(() => {
    //         document.getElementById('retro-shutdown-screen').classList.remove('show');
  //       }, 500);
+ document.querySelector(".retro-text").textContent = "Nowy tekst";
     }
     fill.style.width = width + '%';
 }, 100);
